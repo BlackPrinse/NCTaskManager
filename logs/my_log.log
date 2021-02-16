@@ -1595,3 +1595,15 @@ The list of planned tasks was displayed in the console
 2021-02-16 15:04:41 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
 2021-02-16 15:04:41 INFO  EmailNotification:52 - 
 The list of planned tasks was displayed in the console
+2021-02-16 15:16:59 INFO  TaskManager:33 - Program started by user.
+2021-02-16 15:16:59 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-16 15:16:59 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-16 15:17:08 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 15:17:08 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 16:13:02 INFO  TaskManager:33 - Program started by user.
+2021-02-16 16:13:02 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-16 16:13:02 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-16 16:13:11 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 16:13:11 INFO  EmailNotification:53 - 
+The list of planned tasks was displayed in the console

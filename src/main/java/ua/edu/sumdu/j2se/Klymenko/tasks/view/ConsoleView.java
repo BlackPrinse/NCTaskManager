@@ -55,16 +55,11 @@ public class ConsoleView implements View{
      */
     @Override
     public void displayMenu() {
-        println("\n---------------> Task Manager <---------------");
-
-        println("1 -> Add any task");
-        println("2 -> Edit exist task");
-        println("3 -> Delete exist task");
-        println("4 -> Show task list");
-        println("5 -> Show calendar");
-        println("0 -> Exit");
-        println("----------------------------------------------");
-        print("Select an action and enterv its number here -> ");
+        for (String str :
+                ListStrings.mainMenu) {
+            println(str);
+        }
+        print(ListStrings.selectAndEnter);
     }
 
     /**
@@ -72,15 +67,11 @@ public class ConsoleView implements View{
      */
     @Override
     public void displayEditMenu() {
-        println("\n---------------> Editing menu <---------------");
-
-        println("1 -> Edit title");
-        println("2 -> Edit activity status");
-        println("3 -> Edit time or make task non-repeating");
-        println("4 -> Edit time/interval or make task repeating");
-        println("0 -> Return to main menu");
-        println("----------------------------------------------");
-        print("Select an action and enter its number here -> ");
+        for (String str :
+                ListStrings.editMenu) {
+            println(str);
+        }
+        print(ListStrings.selectAndEnter);
     }
 
     /**
@@ -133,8 +124,7 @@ public class ConsoleView implements View{
             notEmptyList(list);
             print(ListStrings.enterIndex + "remove: ");
             int id = readInt(1, list.size());
-            print("To remove you should enter \"Yes\"" +
-                    "\nAre you sure you want to exit (Yes/No)? ");
+            print(ListStrings.sureToRemove);
             if (checkUserAnswer()) {
                 return id;
             }
