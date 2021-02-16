@@ -1,6 +1,7 @@
 package ua.edu.sumdu.j2se.Klymenko.tasks.controller;
 
 import ua.edu.sumdu.j2se.Klymenko.tasks.TaskManager;
+import ua.edu.sumdu.j2se.Klymenko.tasks.additions.ListStrings;
 import ua.edu.sumdu.j2se.Klymenko.tasks.controller.notifications.NotificationManager;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.AbstractTaskList;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.Task;
@@ -113,9 +114,9 @@ public class Controller {
         int repeated = view.getIsTaskRepeated();
         if (repeated == 2) {
             while (true) {
-                view.print("\nStart date of the period: ");
+                view.print(ListStrings.enterPeriod("start"));
                 LocalDateTime start = view.parseDateTime();
-                view.print("\nEnd date of the period: ");
+                view.print(ListStrings.enterPeriod("end"));
                 LocalDateTime end = view.parseDateTime();
                 int interval = view.getInterval();
                 if (!((start.isAfter(end) || start.isEqual(end)) &&
@@ -124,11 +125,11 @@ public class Controller {
                     task.setActive(true);
                     model.add(task);
                     view.displayTaskInfo(task);
-                    view.print("The task was successfully added to the list.");
-                    logger.info("The task: " + task.getTitle() + " was successfully added to the list.");
+                    view.print(ListStrings.successsAdded(task.getTitle()));
+                    logger.info(ListStrings.successsAdded(task.getTitle()));
                     break;
                 } else {
-                    view.print("Wrong time period. Try again!");
+                    view.print(ListStrings.wrongField("time period"));
                 }
             }
         } else {
@@ -138,9 +139,8 @@ public class Controller {
             task.setActive(true);
             model.add(task);
             view.displayTaskInfo(task);
-            view.print("The task " + task.getTitle() + " was successfully added to the list.");
-            logger.info("The task: " + task.getTitle() + " was successfully added to the list.");
-
+            view.print(ListStrings.successsAdded(task.getTitle()));
+            logger.info(ListStrings.successsAdded(task.getTitle()));
         }
         ConsoleView.consoleIsAble = true;
     }
@@ -201,9 +201,9 @@ public class Controller {
                             if (!((start.isAfter(end) || start.isEqual(end)) &&
                                     start.plusSeconds(interval).isAfter(end))) {
                                 task.setTime(start, end, interval);
-                                view.print("Start time was changed successfully on: " + task.getStartTime() +
-                                        "\nEnd time was changed successfully on: " + task.getEndTime() +
-                                        "\nInterval was changed successfully on: " + task.getRepeatInterval());
+                                view.print(ListStrings.successChanged("Start time") + task.getStartTime() +
+                                        ListStrings.successChanged("\nEnd time") + task.getEndTime() +
+                                        ListStrings.successChanged("\nInterval") + task.getRepeatInterval());
                                 break;
                             } else {
                                 view.println("Wrong time period. Please try again.");

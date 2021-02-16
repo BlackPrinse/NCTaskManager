@@ -1,5 +1,6 @@
 package ua.edu.sumdu.j2se.Klymenko.tasks.view;
 
+import ua.edu.sumdu.j2se.Klymenko.tasks.additions.ListStrings;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.AbstractTaskList;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.Task;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.Tasks;
@@ -111,7 +112,7 @@ public class ConsoleView implements View{
             return 0;
         } else {
             notEmptyList(list);
-            print("Enter the task index to edit: ");
+            print(ListStrings.enterIndex + "edit: ");
             id = readInt(1, list.size());
         }
         return id;
@@ -130,7 +131,7 @@ public class ConsoleView implements View{
             return 0;
         } else {
             notEmptyList(list);
-            print("Enter the task index to remove: ");
+            print(ListStrings.enterIndex + "remove: ");
             int id = readInt(1, list.size());
             print("To remove you should enter \"Yes\"" +
                     "\nAre you sure you want to exit (Yes/No)? ");
@@ -151,9 +152,9 @@ public class ConsoleView implements View{
     public void getCalendar(AbstractTaskList list) throws ClassNotFoundException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
         while (true) {
-            print("Enter start date of the period: ");
+            print(ListStrings.enterPeriod("start"));
             LocalDateTime start = parseDateTime();
-            print("Enter end date of the period: ");
+            print(ListStrings.enterPeriod("end"));
             LocalDateTime end = parseDateTime();
 
             if (!start.isAfter(end)) {
@@ -191,7 +192,7 @@ public class ConsoleView implements View{
         while (title.isEmpty()) {
             title = scanner.nextLine();
             if (title.isEmpty()) {
-                print("Title field is empty. Please enter correct value: ");
+                print(ListStrings.fieldIsEmpty("Title"));
             }
         }
         return title;
@@ -209,9 +210,9 @@ public class ConsoleView implements View{
         while (!(s.equalsIgnoreCase("true") || s.equalsIgnoreCase("false"))) {
             s = scanner.nextLine();
             if (s.isEmpty()) {
-                print("Activity status field is empty. Please enter correct value: ");
+                print(ListStrings.fieldIsEmpty("Activity status"));
             } else if (!(s.equalsIgnoreCase("true") || s.equalsIgnoreCase("false"))) {
-                print("Incorrect status. Please enter correct value: ");
+                print(ListStrings.incorectData("staus"));
             }
         }
         return Boolean.parseBoolean(s);
@@ -229,10 +230,10 @@ public class ConsoleView implements View{
             print("Enter [1] to create simple non-repeating task or [2] to repeating task: ");
             choice = readInt(1, 2);
             if (choice == 1) {
-                print("Non-repeating task selected!");
+                print(ListStrings.taskSelected("Non-repeating"));
                 return choice;
             } else if (choice == 2) {
-                print("Repeating task selected");
+                print(ListStrings.taskSelected("Repeating"));
                 return choice;
             } else if (choice == -1) {
                 break;
