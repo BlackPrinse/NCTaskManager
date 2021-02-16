@@ -19,22 +19,29 @@ public class TaskManager {
     /**
      * Constructor initializes the task list (array)
      */
-    public TaskManager() throws ClassNotFoundException {
-        this.list = TaskListFactory.createTaskList(ListTypes.types.ARRAY);
+    public TaskManager() {
+        try {
+            this.list = TaskListFactory.createTaskList(ListTypes.types.ARRAY);
+        } catch (ClassNotFoundException ex) {
+            logger.error("Error with create task manager (creating list with factory)");
+        }
     }
 
     /**
      * Runs task manager. Load task list from storage-file, start cobtroller and initialize view
      * When the application is correctly finished saves data to storage (json file)
-     *
-     * @throws ClassNotFoundException
      */
-    public void startManager() throws ClassNotFoundException {
+    public void startManager(){
         logger.info("Program started by user.");
         TaskIO.readFromFile(list, DATA_JSON_PATH);
         ConsoleView view = new ConsoleView();
-        Controller controller = new Controller(list, view);
-        controller.start();
+        try {
+            Controller controller = new Controller(list, view);
+            controller.start();
+        } catch (ClassNotFoundException ex) {
+            logger.error("Error with controller creating");
+        }
+
         TaskIO.save2File(list, DATA_JSON_PATH);
         logger.info("Program finished by user.");
     }
