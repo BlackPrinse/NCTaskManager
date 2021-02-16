@@ -1,5 +1,6 @@
 package ua.edu.sumdu.j2se.Klymenko.tasks.controller.notifications;
 
+import ua.edu.sumdu.j2se.Klymenko.tasks.additions.ListStrings;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.AbstractTaskList;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.Task;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.Tasks;
@@ -19,7 +20,7 @@ import java.util.SortedMap;
 public class NotificationManager extends Thread {
     private static final Logger logger = Logger.getLogger(NotificationManager.class);
     private final static long TIMER_SENDING = 3600000; // hour
-    private final static long TIMER_REPEATING = 60000; //30 sec
+    private final static long TIMER_REPEATING = 30000; //30 sec
     private AbstractTaskList list;
     private Notifications emailNotification;
     private Notifications consoleNotification;
@@ -64,7 +65,7 @@ public class NotificationManager extends Thread {
 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
-                            logger.error("Interrupted exception.", e);
+                            logger.error(ListStrings.interaptedEx, e);
                         }
                         if (ConsoleView.consoleIsAble) {
                             emailNotification.send(map);
@@ -78,7 +79,7 @@ public class NotificationManager extends Thread {
                 Thread.sleep(TIMER_SENDING);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-                logger.error("Interrupted exception.", e);
+                logger.error(ListStrings.interaptedEx, e);
             }
         }
     }

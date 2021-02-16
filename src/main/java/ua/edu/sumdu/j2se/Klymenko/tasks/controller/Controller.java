@@ -114,9 +114,9 @@ public class Controller {
         int repeated = view.getIsTaskRepeated();
         if (repeated == 2) {
             while (true) {
-                view.print(ListStrings.enterPeriod("start"));
+                view.print("Enter start" + ListStrings.enterPeriod);
                 LocalDateTime start = view.parseDateTime();
-                view.print(ListStrings.enterPeriod("end"));
+                view.print("Enter end" + ListStrings.enterPeriod);
                 LocalDateTime end = view.parseDateTime();
                 int interval = view.getInterval();
                 if (!((start.isAfter(end) || start.isEqual(end)) &&
@@ -125,11 +125,11 @@ public class Controller {
                     task.setActive(true);
                     model.add(task);
                     view.displayTaskInfo(task);
-                    view.print(ListStrings.successsAdded(task.getTitle()));
-                    logger.info(ListStrings.successsAdded(task.getTitle()));
+                    view.print("The task" + task.getTitle() + ListStrings.successsAdded);
+                    logger.info("The task" + task.getTitle() + ListStrings.successsAdded);
                     break;
                 } else {
-                    view.print(ListStrings.wrongField("time period"));
+                    view.print("Wrong time period!. " + ListStrings.ptr);
                 }
             }
         } else {
@@ -139,8 +139,8 @@ public class Controller {
             task.setActive(true);
             model.add(task);
             view.displayTaskInfo(task);
-            view.print(ListStrings.successsAdded(task.getTitle()));
-            logger.info(ListStrings.successsAdded(task.getTitle()));
+            view.print("The task" + task.getTitle() + ListStrings.successsAdded);
+            logger.info("The task" + task.getTitle() + ListStrings.successsAdded);
         }
         ConsoleView.consoleIsAble = true;
     }
@@ -178,16 +178,16 @@ public class Controller {
                 switch (choice) {
                     case 1:
                         task.setTitle(view.getTitle());
-                        view.print("Title was changed on: " + task.getTitle());
+                        view.print("Title " + ListStrings.successChanged + task.getTitle());
                         break;
                     case 2:
                         boolean aBoolean = view.getActiveStatus();
                         task.setActive(aBoolean);
-                        view.print("Activity status was changed on: " + task.isActive());
+                        view.print("Activity " + ListStrings.successChanged + task.isActive());
                         break;
                     case 3:
                         task.setTime(view.parseDateTime());
-                        view.print("Time was changed on: " + task.getTime());
+                        view.print("Time " + ListStrings.successChanged + task.getTime());
                         break;
                     case 4:
                         while (true) {
@@ -201,9 +201,9 @@ public class Controller {
                             if (!((start.isAfter(end) || start.isEqual(end)) &&
                                     start.plusSeconds(interval).isAfter(end))) {
                                 task.setTime(start, end, interval);
-                                view.print(ListStrings.successChanged("Start time") + task.getStartTime() +
-                                        ListStrings.successChanged("\nEnd time") + task.getEndTime() +
-                                        ListStrings.successChanged("\nInterval") + task.getRepeatInterval());
+                                view.print("Start time" + ListStrings.successChanged + task.getStartTime() +
+                                        "\nEnd time" + ListStrings.successChanged + task.getEndTime() +
+                                        "\nInterval" + ListStrings.successChanged + task.getRepeatInterval());
                                 break;
                             } else {
                                 view.println("Wrong time period. Please try again.");

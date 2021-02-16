@@ -1,5 +1,6 @@
 package ua.edu.sumdu.j2se.Klymenko.tasks.controller.notifications;
 
+import ua.edu.sumdu.j2se.Klymenko.tasks.additions.ListStrings;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.Task;
 import ua.edu.sumdu.j2se.Klymenko.tasks.view.View;
 import ua.edu.sumdu.j2se.Klymenko.tasks.view.ConsoleView;
@@ -37,7 +38,7 @@ public class ConsoleNotification implements Notifications {
     @Override
     public void send(SortedMap<LocalDateTime, Set<Task>> calendar) {
         view = new ConsoleView();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ListStrings.timePattern);
         view.println("\nTask Manager. \n" +
                 "There are several uncompleted tasks");
         view.println("Tasks for the next hour:");

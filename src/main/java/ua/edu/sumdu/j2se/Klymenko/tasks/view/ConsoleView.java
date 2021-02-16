@@ -150,11 +150,11 @@ public class ConsoleView implements View{
      */
     @Override
     public void getCalendar(AbstractTaskList list) throws ClassNotFoundException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ListStrings.timePattern);
         while (true) {
-            print(ListStrings.enterPeriod("start"));
+            print("Enter start" + ListStrings.enterPeriod);
             LocalDateTime start = parseDateTime();
-            print(ListStrings.enterPeriod("end"));
+            print("Enter end" + ListStrings.enterPeriod);
             LocalDateTime end = parseDateTime();
 
             if (!start.isAfter(end)) {
@@ -192,7 +192,7 @@ public class ConsoleView implements View{
         while (title.isEmpty()) {
             title = scanner.nextLine();
             if (title.isEmpty()) {
-                print(ListStrings.fieldIsEmpty("Title"));
+                print("Title" + ListStrings.fieldIsEmpty);
             }
         }
         return title;
@@ -210,9 +210,9 @@ public class ConsoleView implements View{
         while (!(s.equalsIgnoreCase("true") || s.equalsIgnoreCase("false"))) {
             s = scanner.nextLine();
             if (s.isEmpty()) {
-                print(ListStrings.fieldIsEmpty("Activity status"));
+                print("Activity status" + ListStrings.fieldIsEmpty);
             } else if (!(s.equalsIgnoreCase("true") || s.equalsIgnoreCase("false"))) {
-                print(ListStrings.incorectData("staus"));
+                print("Wrong status." + ListStrings.ptr);
             }
         }
         return Boolean.parseBoolean(s);
@@ -230,10 +230,10 @@ public class ConsoleView implements View{
             print("Enter [1] to create simple non-repeating task or [2] to repeating task: ");
             choice = readInt(1, 2);
             if (choice == 1) {
-                print(ListStrings.taskSelected("Non-repeating"));
+                print("Non-repeating " + ListStrings.taskSelected);
                 return choice;
             } else if (choice == 2) {
-                print(ListStrings.taskSelected("Repeating"));
+                print("Repeating " + ListStrings.taskSelected);
                 return choice;
             } else if (choice == -1) {
                 break;
@@ -261,10 +261,10 @@ public class ConsoleView implements View{
      */
     @Override
     public LocalDateTime parseDateTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ListStrings.timePattern);
         String date = "";
         LocalDateTime time;
-        print("Enter the date of the following format: dd.MM.yyyy HH:mm: ");
+        print("Enter the date of the following format: " + ListStrings.timePattern + " ");
         while (true) {
             try {
                 date = scanner.nextLine();
@@ -273,7 +273,7 @@ public class ConsoleView implements View{
             } catch (DateTimeParseException e) {
                 logger.error("Incorrect date format");
             }
-            print("Incorrect! Please enter the date of the following time: dd.MM.yyyy HH:mm: ");
+            print("Incorrect! Please enter the date of the following time: " + ListStrings.timePattern + " ");
         }
         return time;
     }
@@ -285,7 +285,7 @@ public class ConsoleView implements View{
      */
     @Override
     public void displayTaskInfo(Task task) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ListStrings.timePattern);
         StringBuilder builder = new StringBuilder();
         builder.append("Task title: " + task.getTitle());
         if (!task.isRepeated()) {
@@ -322,7 +322,7 @@ public class ConsoleView implements View{
      * @param tasks tasks list to output in console
      */
     private void notEmptyList(AbstractTaskList tasks) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ListStrings.timePattern);
 
         StringBuffer strBuffer = new StringBuffer();
         int size = tasks.size();
