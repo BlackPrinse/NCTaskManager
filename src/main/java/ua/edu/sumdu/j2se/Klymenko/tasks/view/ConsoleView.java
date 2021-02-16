@@ -11,6 +11,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
 
+
+
 /**
  * The class is designed to create a console menu. To set up good information exchange in the console.
  * Prints data to the CLI and requests the value of the controller.
@@ -18,6 +20,8 @@ import java.util.*;
 public class ConsoleView implements View{
     private static final Logger logger = Logger.getLogger(ConsoleView.class);
     private Scanner scanner = new Scanner(System.in);
+
+    public static boolean consoleIsAble = true;
 
     /**
      * Constructor to make start console view
@@ -59,7 +63,7 @@ public class ConsoleView implements View{
         println("5 -> Show calendar");
         println("0 -> Exit");
         println("----------------------------------------------");
-        print("Select an action and enter its number here -> ");
+        print("Select an action and enterv its number here -> ");
     }
 
     /**
@@ -246,6 +250,7 @@ public class ConsoleView implements View{
     public int getInterval() {
         print("Enter the interval in minutes: ");
         return readInt(1, Integer.MAX_VALUE) * 60;
+
     }
 
     /**
@@ -401,5 +406,6 @@ public class ConsoleView implements View{
             }
             print("Please, enter correct value or [quit] to cancel: ");
         }
+
     }
 }

@@ -38,10 +38,11 @@ public class ConsoleNotification implements Notifications {
     public void send(SortedMap<LocalDateTime, Set<Task>> calendar) {
         view = new ConsoleView();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
-        view.println("Task Manager. \n" +
+        view.println("\nTask Manager. \n" +
                 "There are several uncompleted tasks");
         view.println("Tasks for the next hour:");
         view.println(String.format("Date:%14s Task:", " "));
+
         for (Map.Entry<LocalDateTime, Set<Task>> entry : calendar.entrySet()) {
             view.print(entry.getKey().format(formatter) + "\t");
             for (Task task : entry.getValue()) {

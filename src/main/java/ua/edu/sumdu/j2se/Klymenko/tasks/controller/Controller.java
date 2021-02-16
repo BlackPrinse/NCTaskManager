@@ -5,11 +5,14 @@ import ua.edu.sumdu.j2se.Klymenko.tasks.controller.notifications.NotificationMan
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.AbstractTaskList;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.Task;
 import ua.edu.sumdu.j2se.Klymenko.tasks.model.TaskIO;
+import ua.edu.sumdu.j2se.Klymenko.tasks.view.ConsoleView;
 import ua.edu.sumdu.j2se.Klymenko.tasks.view.View;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
+
+import javax.security.auth.login.ConfigurationSpi;
 
 /**
  * The class responsible for the relationship between the model and the view.
@@ -52,6 +55,7 @@ public class Controller {
             } catch (Exception e) {
                 continue;
             }
+            ConsoleView.consoleIsAble = false;
             if (choice == 0) {
                 view.print("Are you sure you want to exit? (Yes/No): ");
                 if (view.checkUserAnswer()) {
@@ -63,15 +67,21 @@ public class Controller {
                 switch (choice) {
                     case 1:
                         view.print("Are you sure you want to add a task? (Yes/No): ");
-                        if ((view.checkUserAnswer())) addTask();
+                        if ((view.checkUserAnswer())) {
+                            addTask();
+                        }
                         break;
                     case 2:
                         view.print("Are you sure you want to edit a task? (Yes/No): ");
-                        if ((view.checkUserAnswer())) editTask();
+                        if ((view.checkUserAnswer())) {
+                            editTask();
+                        }
                         break;
                     case 3:
                         view.print("Are you sure you want to delete a task? (Yes/No): ");
-                        if ((view.checkUserAnswer())) removeTask();
+                        if ((view.checkUserAnswer())) {
+                            removeTask();
+                        }
                         break;
                     case 4:
                         getList();
@@ -82,6 +92,7 @@ public class Controller {
                     default:
                 }
             }
+            ConsoleView.consoleIsAble = true;
         }
     }
 
@@ -96,6 +107,7 @@ public class Controller {
      * Adds entered by user  task to the task list.
      */
     public void addTask() {
+        ConsoleView.consoleIsAble = false;
         Task task;
         String title = view.getTitle();
         int repeated = view.getIsTaskRepeated();
@@ -130,12 +142,14 @@ public class Controller {
             logger.info("The task: " + task.getTitle() + " was successfully added to the list.");
 
         }
+        ConsoleView.consoleIsAble = true;
     }
 
     /**
      * Edits any existing selected task from task lit.
      */
     public void editTask() {
+        ConsoleView.consoleIsAble = false;
         int index = view.selectTask(model) - 1;
         Task task = null;
         try {
@@ -202,12 +216,14 @@ public class Controller {
         }
         view.println("The task has been successfully changed!");
         logger.info("The task: " + task.getTitle() + "has been changed successfully!");
+        ConsoleView.consoleIsAble = true;
     }
 
     /**
      * Removes any existing selected task from task list.
      */
     public void removeTask() {
+        ConsoleView.consoleIsAble = false;
         int taskID = view.removeTask(model);
         Task task;
         if (taskID == 0) {
@@ -220,6 +236,7 @@ public class Controller {
             view.print("Task №: " + taskID + " was deleted successfully!");
             logger.info("Task №: " + taskID + " was deleted successfully!");
         }
+        ConsoleView.consoleIsAble = true;
     }
 
     /**

@@ -1493,3 +1493,90 @@ The list of planned tasks was displayed in the console
 2021-02-02 00:04:44 INFO  TaskManager:33 - Program started by user.
 2021-02-02 00:04:45 INFO  TaskIO:229 - The task list has been read from ./data/data.json
 2021-02-02 00:04:45 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-03 10:36:35 INFO  TaskManager:33 - Program started by user.
+2021-02-03 10:36:35 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-03 10:36:35 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-03 10:36:44 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-03 10:36:44 INFO  EmailNotification:51 - 
+The list of planned tasks was displayed in the console
+2021-02-03 10:39:58 INFO  TaskManager:33 - Program started by user.
+2021-02-03 10:39:58 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-03 10:39:58 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-03 10:40:07 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-03 10:40:23 INFO  TaskManager:33 - Program started by user.
+2021-02-03 10:40:23 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-03 10:40:23 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-03 10:40:33 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-03 10:40:33 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 01:49:57 INFO  TaskManager:33 - Program started by user.
+2021-02-16 01:49:57 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-16 01:49:57 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-16 08:48:48 INFO  TaskManager:33 - Program started by user.
+2021-02-16 08:48:48 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-16 08:48:48 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-16 08:49:00 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 08:49:00 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 08:49:36 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:05:43 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:06:19 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:06:20 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:06:56 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:06:56 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:07:33 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:07:33 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:08:09 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:08:09 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:08:46 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:08:46 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:09:23 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:09:23 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:10:00 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:10:00 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:10:12 INFO  TaskManager:33 - Program started by user.
+2021-02-16 09:10:13 INFO  TaskIO:229 - The task list has been read from ./data/data.json
+2021-02-16 09:10:13 INFO  PropertyLoad:28 - Property configuration was successfully downloaded.
+2021-02-16 09:10:21 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:10:21 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:10:57 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:10:57 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:11:34 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:11:34 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:12:10 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:12:27 INFO  Controller:140 - The task: 1 was successfully added to the list.
+2021-02-16 09:12:36 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:13:13 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:13:13 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:13:49 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:13:49 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:14:25 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:14:25 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:15:02 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:15:02 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:15:38 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:15:38 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:16:15 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:16:15 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:16:51 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:16:51 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
+2021-02-16 09:17:27 INFO  EmailNotification:93 - Tasks for the next hour is sent on email: bogdanfirefly@gmail.com
+2021-02-16 09:17:27 INFO  EmailNotification:52 - 
+The list of planned tasks was displayed in the console
