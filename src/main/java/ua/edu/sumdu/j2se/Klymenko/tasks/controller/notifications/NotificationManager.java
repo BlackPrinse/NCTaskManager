@@ -18,8 +18,8 @@ import java.util.SortedMap;
  */
 public class NotificationManager extends Thread {
     private static final Logger logger = Logger.getLogger(NotificationManager.class);
-    private final static long TIMER_SENDING = 30000; // hour
-    private final static long TIMER_REPEATING = 10000; //30 sec
+    private final static long TIMER_SENDING = 3600000; // hour
+    private final static long TIMER_REPEATING = 60000; //30 sec
     private AbstractTaskList list;
     private Notifications emailNotification;
     private Notifications consoleNotification;
